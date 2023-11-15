@@ -1,0 +1,27 @@
+<body>
+  
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/TGpLljWfoYI?si=EtSPQGPXHQsp8hBN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+  <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+  
+  <script>
+    
+    const videoIds = [
+      'J---aiyznGQ',
+      'TGpLljWfoYI'
+    ]
+  
+    function randomCatVid () {
+      const youtube = nn.get('#youtube')
+      const id = nn.random(videoIds)
+      const url = 'https://www.youtube.com/embed/' + id
+      youtube.setAttribute('src', url)
+    }
+    
+    nn.on('click', randomCatVid)
+  
+  </script>
+
+
+
+</body>
