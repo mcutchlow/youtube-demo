@@ -1,6 +1,24 @@
+<style>
+  
+  #youtube {
+    border: 10px solid red;
+    transition-property: border;
+    transition-delay: 1s;
+      }
+    
+  #youtube:hover {
+    border: 10px solid green;
+    }
+    
+
+</style>
+
+
 <body>
   
   <iframe width="560" height="315" src="https://www.youtube.com/embed/TGpLljWfoYI?si=EtSPQGPXHQsp8hBN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+  <button id="new-vid">next</button>
   
   <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
   
@@ -18,7 +36,8 @@
       youtube.setAttribute('src', url)
     }
     
-    nn.on('click', randomCatVid)
+    // nn.on('click', randomCatVid)
+    nn.get('#new-vid').on('click', randomCatVid)
   
   </script>
 
