@@ -1,8 +1,10 @@
 <style>
   
   #youtube {
-    border: 10px solid red;
-    transition-property: border;
+    border-width: 10px;
+    border-style: solid;
+    border-color: red;
+    transition-property: border-color;
     transition-delay: 1s;
       }
     
@@ -16,7 +18,8 @@
 
 <body>
   
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/TGpLljWfoYI?si=EtSPQGPXHQsp8hBN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe id="youtube" src='https://www.youtube.com/embed/TGpLljWfoYI'></iframe>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/TGpLljWfoYI?si=EtSPQGPXHQsp8hBN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --> -->
   
   <button id="new-vid">next</button>
   
@@ -34,6 +37,8 @@
       const id = nn.random(videoIds)
       const url = 'https://www.youtube.com/embed/' + id
       youtube.setAttribute('src', url)
+      const w = nn.width - 300
+      youtube.style.left = nn.random(w) + 'px'
     }
     
     // nn.on('click', randomCatVid)
